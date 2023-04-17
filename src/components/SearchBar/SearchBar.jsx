@@ -17,13 +17,18 @@ export default function SearchBar() {
         //This is the api call to get current weather data
         const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiToken}`)
         const weatherData = await weatherResponse.json();
-        console.log(weatherData)
         setWeather(weatherData);
 
         //making api call to get the forecast data for the searched location
         const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=${apiToken}`)
         const forecastData = await forecastResponse.json();
         console.log(forecastData)
+
+        //40 different times is too much to display, will condense it down to every 12 hours
+        //need to use a for loop or some other method to filter through the list array
+        //and grab every 5th index starting at 0
+        const filteredForecast = [];
+
         setForecast(forecastData)
     }
 

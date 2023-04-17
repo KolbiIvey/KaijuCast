@@ -15,7 +15,7 @@ export default function SearchResults({weather, forecast}) {
       <div>
         {forecast && (
             <>
-                <p2>{forecast.list}</p2>
+                <p>{forecast.list[0].main.feels_like}</p>
             </>
         )}
       </div>
