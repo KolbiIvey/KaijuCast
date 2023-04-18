@@ -8,11 +8,11 @@ export default function SearchResults({weather, forecast}) {
   return (
     <div className='search-results'>
       {weather && (
-        <>
+        <div className='cureent-weather'>
           <h2>{weather.name}, {weather.sys.country}</h2>
           <p>Current Temp: {Math.round((weather.main.temp - 273.15) * 9/5 + 32)}°F</p>
           <p>Current Weather Conditions: {weather.weather[0].description}</p>
-        </>
+        </div>
       )}
 
       <div className='forecast-container'>
