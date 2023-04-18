@@ -1,0 +1,33 @@
+.search-results {
+    padding: 20px;
+    background-color: #322828;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .search-results h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .search-results p {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .forecast-value {
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/db9a7ff7-f79b-4cae-9da2-ff7890c8f1e7/dcwpsl6-0137b069-988d-4796-9ff3-aa515e141001.jpg/v1/fit/w_300,h_900,q_70,strp/mothra___legendary_by_pigeon_oc_dcwpsl6-300w.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2RiOWE3ZmY3LWY3OWItNGNhZS05ZGEyLWZmNzg5MGM4ZjFlN1wvZGN3cHNsNi0wMTM3YjA2OS05ODhkLTQ3OTYtOWZmMy1hYTUxNWUxNDEwMDEuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.0xnZOqj3p8z132m50pphTv_Q6ARGW88uy5BhL-4AMAc);
+    background-position: center;
+  }
