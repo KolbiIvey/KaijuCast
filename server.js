@@ -18,6 +18,7 @@ app.use(require('./config/checkToken'));
 
 // Put all API routes here (before the catch-all)
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/favorites', require('./routes/api/favorites'))
 
 
 
