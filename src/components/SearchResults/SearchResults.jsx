@@ -7,17 +7,19 @@ export default function SearchResults({weather, forecast}) {
       {weather && (
         <>
           <h2>{weather.name}, {weather.sys.country}</h2>
-          <p>Temperature: {Math.round((weather.main.temp - 273.15) * 9/5 + 32)}°F</p>
-          <p>Weather: {weather.weather[0].description}</p>
+          <p>Current Temp: {Math.round((weather.main.temp - 273.15) * 9/5 + 32)}°F</p>
+          <p>Current Weather Conditions: {weather.weather[0].description}</p>
         </>
       )}
 
       <div>
-        {forecast && (
-            <>
-                <p>{forecast.list[0].main.feels_like}</p>
-            </>
-        )}
+        {forecast && forecast.map((item) => (
+            <div key={item.dt}>
+                <p> Date: {new Date(item.dt * 1000).toLocaleDateString()}</p>
+                <p>Temp: {Math.round((item.main.temp - 273.15) * 9/5 + 32)}°F</p>
+                <p>Weather: {item.weather[0].description}</p>
+            </div>
+        ))}
       </div>
     </div>
   )

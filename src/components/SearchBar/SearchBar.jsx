@@ -28,8 +28,11 @@ export default function SearchBar() {
         //need to use a for loop or some other method to filter through the list array
         //and grab every 5th index starting at 0
         const filteredForecast = [];
+            for (let i = 0;i < forecastData.list.length; i += 5) {
+                filteredForecast.push(forecastData.list[i])
 
-        setForecast(forecastData)
+            }
+        setForecast(filteredForecast)
     }
 
     const handleChange = (evt) => {
