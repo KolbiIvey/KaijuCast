@@ -7,3 +7,5 @@ router.get('/favorites', favsCtrl.locations)
 
 //POST api/favorites
 router.post('/favorites', favsCtrl.saveLocation)
+
+module.exports = router;

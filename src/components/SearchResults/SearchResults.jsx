@@ -6,7 +6,7 @@ import './SearchResults.css'
 export default function SearchResults({weather, forecast}) {
 
   async function handleClick() {
-    
+
   }
 
   return (
@@ -14,7 +14,7 @@ export default function SearchResults({weather, forecast}) {
       <div className='search-results'>
         <button name='favButton' onClick={handleClick}>Add to Favorites</button>
         {weather && (
-          <div className='cureent-weather'>
+          <div className='current-weather'>
             <h2>{weather.name}, {weather.sys.country}</h2>
             <p>Current Temp: {Math.round((weather.main.temp - 273.15) * 9/5 + 32)}°F</p>
             <p>Current Weather Conditions: {weather.weather[0].description}</p>

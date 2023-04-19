@@ -27,6 +27,7 @@ export default function FavLocations() {
     <div>
       <button onClick={handleClick}>Search</button>
         Fav Locations
+        This is where my fav locations will be 
     </div>
   )
 }
