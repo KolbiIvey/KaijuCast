@@ -13,7 +13,7 @@ async function locations(req, res) {
 
 async function saveLocation(req, res) {
     const newFavLocation = new Favorite({
-        location: req.body.location,
+        location: req.params.cityName,
         user: req.user._id
     })
     await newFavLocation.save();

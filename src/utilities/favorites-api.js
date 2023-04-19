@@ -7,6 +7,6 @@ export function getFav() {
     return sendRequest(BASE_URL)
 }
 
-export function saveFav(locationId) {
-    return sendRequest(`${BASE_URL}/${locationId}`, 'POST')
+export function saveFav(cityName) {
+    return sendRequest(`${BASE_URL}/${cityName}`, 'POST')
 }

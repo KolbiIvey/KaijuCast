@@ -1,11 +1,15 @@
 import React from 'react'
 import './SearchResults.css'
+import * as favoritesAPI from '../../utilities/favorites-api'
 
 
 
 export default function SearchResults({weather, forecast}) {
 
   async function handleClick() {
+    const cityName =  weather.name;
+    const favLocationId = await favoritesAPI.saveFav(cityName)
+    console.log(favLocationId)
 
   }
 

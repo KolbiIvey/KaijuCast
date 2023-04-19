@@ -4,30 +4,49 @@ import * as favoritesAPI from '../../utilities/favorites-api'
 
 export default function FavLocations() {
 
-    const [userFavLocations, setUserFavLocations] = useState([]);
+  const [weather, setWeather] = useState(null)
 
-    const navigate = useNavigate();
+  const apiToken = import.meta.env.VITE_API_KEY
 
-    function handleClick() {
-      navigate('/search')
-    }
+  const navigate = useNavigate();
 
-    useEffect(function() {
-        
-        async function getUserLocations() {
-            const userLocation = await favoritesAPI.getFav();
-            setUserFavLocations(userLocation);
-        }
+  function handleClick() {
+    navigate('/search')
+  }
 
-        getUserLocations();
+  useEffect(function() {
+      
+      async function getUserLocations() {
+          const userLocation = await favoritesAPI.getFav();
 
-    },[]);
+          for (let i = 0; i < userLocation.length; i++) {
+            const favLocation = userLocation[i];
+
+            //making api call to get the data for the saved location
+            const favLocationRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${favLocation}&appid=${apiToken}`)
+            const favLocationData = await favLocationRes.json();
+            console.log(favLocationData)
+            setWeather(favLocationData)
+            console.log(weather, 'this is my weather state')
+          }
+      }
+      getUserLocations();
+  },[]);
 
   return (
     <div>
       <button onClick={handleClick}>Search</button>
-        Fav Locations
-        This is where my fav locations will be 
+      <h3>Favorite Locations</h3>
+      {/* <div>
+        {weather.map((wData, idx) => (
+          <div key={idx}>
+            <p>{wData.name}</p>
+            <p>Temp: {Math.round((wData.main.temp - 273.15) * 9/5 + 32)}°F</p>
+            <p>{wData.weather[0].description}</p>
+          </div>
+        ))}
+      </div> */}
+
     </div>
   )
 }
