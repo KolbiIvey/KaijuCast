@@ -5,10 +5,14 @@ import './SearchResults.css'
 
 export default function SearchResults({weather, forecast}) {
 
+  async function handleClick() {
+    
+  }
+
   return (
     <div>
       <div className='search-results'>
-        <button name='favButton'>Add to Favorites</button>
+        <button name='favButton' onClick={handleClick}>Add to Favorites</button>
         {weather && (
           <div className='cureent-weather'>
             <h2>{weather.name}, {weather.sys.country}</h2>

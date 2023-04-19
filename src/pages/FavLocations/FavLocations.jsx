@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import * as favoritesAPI from '../../utilities/favorites-api'
 
 export default function FavLocations() {
 
     const [userFavLocations, setUserFavLocations] = useState([]);
+
+    const navigate = useNavigate();
+
+    function handleClick() {
+      navigate('/search')
+    }
 
     useEffect(function() {
         
@@ -18,6 +25,7 @@ export default function FavLocations() {
 
   return (
     <div>
+      <button onClick={handleClick}>Search</button>
         Fav Locations
     </div>
   )
