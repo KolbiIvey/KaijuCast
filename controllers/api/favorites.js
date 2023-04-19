@@ -8,6 +8,7 @@ module.exports = {
 
 async function locations(req, res) {
     const favLocations = await Favorite.find({user: req.user._id});
+    console.log(favLocations)
     res.json(favLocations)
 }
 
