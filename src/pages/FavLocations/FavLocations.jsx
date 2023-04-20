@@ -15,27 +15,30 @@ export default function FavLocations() {
   }
 
   useEffect(function() {
-      
-      async function getUserLocations() {
-          const userLocation = await favoritesAPI.getFav();
-
-          for (let i = 0; i < userLocation.length; i++) {
-            const favLocation = userLocation[i];
-            //making api call to get the data for the saved location
-            const favLocationRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${favLocation.location}&appid=${apiToken}`)
-            const favLocationData = await favLocationRes.json();
-            console.log(favLocationData)
-            setWeather(prevWeather => [...prevWeather, favLocationData]);
-          }
-      }
-      getUserLocations();
-  },[]);
+    async function getUserLocations() {
+      const userLocation = await favoritesAPI.getFav();
+  
+      const weatherPromises = userLocation.map(async (favLocation) => {
+        const favLocationRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${favLocation.location}&appid=${apiToken}`);
+        return favLocationRes.json();
+      });
+  
+      const weatherData = await Promise.all(weatherPromises);
+      setWeather(weatherData);
+    }
+  
+    getUserLocations();
+  }, []);
 
   return (
     <div>
       <button onClick={handleClick}>Search</button>
       <h3>Favorite Locations</h3>
-      <div>
+      {weather.length === 0 ? (
+        <p>What did you expect something magical? Add some favorite locations.</p>
+
+      ) : (
+        <div>
         {weather.map((wData, idx) => (
           <div key={idx}>
             <p>{wData.name}</p>
@@ -44,6 +47,7 @@ export default function FavLocations() {
           </div>
         ))}
       </div>
+    )}
     </div>
   )
 }

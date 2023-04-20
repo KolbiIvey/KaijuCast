@@ -1,6 +1,7 @@
 import { set } from 'mongoose'
 import React, { useState } from 'react'
 import SearchResults from '../SearchResults/SearchResults'
+import './SearchBar.css'
 
 
 
@@ -43,7 +44,7 @@ export default function SearchBar() {
 
   return (
     <div>
-      <div className='Searchbar'>
+      <div className='SearchBar'>
         <form onSubmit={handleSubmit}>
           <input type='text' value={search} onChange={handleChange} />
           <button type='submit'>Search a Location</button>

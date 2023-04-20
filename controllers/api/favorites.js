@@ -13,10 +13,20 @@ async function locations(req, res) {
 }
 
 async function saveLocation(req, res) {
+    const existingFavLocation = await Favorite.findOne({
+      location: req.params.cityName,
+      user: req.user._id
+    });
+  
+    if (existingFavLocation) {
+      return res.status(400).json({ message: 'Location already saved.' });
+    }
+  
     const newFavLocation = new Favorite({
-        location: req.params.cityName,
-        user: req.user._id
-    })
+      location: req.params.cityName,
+      user: req.user._id
+    });
+  
     await newFavLocation.save();
-    res.json(newFavLocation)
-}
+    res.json(newFavLocation);
+  }

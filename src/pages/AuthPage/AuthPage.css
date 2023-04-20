@@ -1,15 +1,44 @@
 .AuthPage {
   height: 100%;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: var(--white);
   border-radius: 2vmin;
+  background-image: url(/public/G-weather1.png);
+  background-size: cover;
+  background-position: center center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.AuthPage h3 {
-  margin-top: 4vmin;
-  text-align: center;
-  color: var(--text-light);
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+h3 {
+  margin-top: 1rem;
   cursor: pointer;
 }
