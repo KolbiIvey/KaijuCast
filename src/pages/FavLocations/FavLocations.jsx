@@ -45,7 +45,7 @@ export default function FavLocations() {
   return (
     <div>
       <button onClick={handleClick}>Search</button>
-      <h3>Favorite Locations</h3>
+      <h2>Favorite Locations</h2>
       {weather.length === 0 ? (
         <p>What did you expect something magical? Add some favorite locations.</p>
 

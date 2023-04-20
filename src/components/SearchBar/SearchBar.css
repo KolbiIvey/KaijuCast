@@ -6,10 +6,15 @@
     background-color: dimgray;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin: 10px auto 600px auto;
-    padding: 0 20px;
+    margin: 200px auto 700px auto;
+    padding: 0px 40px;
     max-width: 600px;
     opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
   }
   
   .SearchBar form {
@@ -32,8 +37,8 @@
   
   .SearchBar button[type="submit"] {
     font-size: 1rem;
-    font-weight: 600;
-    color: white;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
     background-color: #47a7d6;
     border: none;
     border-radius: 4px;
@@ -43,5 +48,5 @@
   }
   
   .SearchBar button[type="submit"]:hover {
-    background-color: #2e86c1;
+    background-color: #0e5a8e;
   }
