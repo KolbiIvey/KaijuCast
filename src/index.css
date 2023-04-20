@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-image: url("/public/Godzilla_Weather.png");
+  background-image: url("/src/assets/Godzilla_Weather.png");
   background-size: cover;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
