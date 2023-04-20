@@ -1,0 +1,62 @@
+.favButton {
+  background-color: rgb(26, 156, 192);
+}
+
+.search-results {
+  margin-top: 150px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(78, 78, 78);
+  opacity: 0.9;
+}
+
+.current-weather {
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-weight: bold;
+  background-image: url(/src/assets/G-weather1.png);
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+}
+
+.forecast-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 12px;
+  margin-top: 10px;
+}
+
+.forecast-value {
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  width: 205px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(/src/assets/godzilla-1024x576-758x426.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 8px;
+  margin: 5px;
+  margin-left: 0px;
+  font-weight: bold;
+  opacity: 1;
+}
+
+h2 {
+  margin-bottom: 0px;
+}

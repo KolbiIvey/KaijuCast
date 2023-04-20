@@ -16,7 +16,7 @@ export default function SearchResults({weather, forecast}) {
   return (
     <div>
       <div className='search-results'>
-        <button name='favButton' onClick={handleClick}>Add to Favorites</button>
+        <button className='favButton' onClick={handleClick}>Add to Favorites</button>
         {weather && (
           <div className='current-weather'>
             <h2>{weather.name}, {weather.sys.country}</h2>

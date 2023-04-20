@@ -49,8 +49,8 @@ export default function SearchBar() {
           <input type='text' value={search} onChange={handleChange} />
           <button type='submit'>Search a Location</button>
         </form>
-        {weather && <SearchResults weather={weather} forecast={forecast}/>}
       </div>
+        {weather && <SearchResults weather={weather} forecast={forecast}/>}
     </div>
   )
 }
