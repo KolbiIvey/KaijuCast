@@ -22,7 +22,7 @@
     opacity: 1;
 }
 
-h2 {
+.fav-text-container h2 {
     border: 3px solid #ffffff;
     border-radius: 10px;
     background-color: rgb(26, 156, 192);

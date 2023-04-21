@@ -60,7 +60,7 @@ export default function FavLocations() {
   }, []);
 
   return (
-    <div>
+    <div className='fav-text-container'>
       <h2>Favorite Locations</h2>
       {weather.length === 0 ? (
         <p>What did you expect something magical? Add some favorite locations.</p>
