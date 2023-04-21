@@ -19,6 +19,7 @@ export default function SearchBar() {
         const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiToken}`)
         const weatherData = await weatherResponse.json();
         setWeather(weatherData);
+        console.log(evt)
 
         //making api call to get the forecast data for the searched location
         const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=${apiToken}`)
@@ -37,16 +38,16 @@ export default function SearchBar() {
     }
 
     const handleChange = (evt) => {
+        console.log(evt)
         setSearch(evt.target.value)
     }
-
 
 
   return (
     <div>
       <div className='SearchBar'>
         <form onSubmit={handleSubmit}>
-          <input type='text' value={search} onChange={handleChange} />
+          <input type='text' value={search} onChange={handleChange} placeholder='type here' />
           <button type='submit'>Search a Location</button>
         </form>
       </div>

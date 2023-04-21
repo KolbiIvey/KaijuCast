@@ -15,8 +15,10 @@ function App() {
     setUser(userData)
   }
 
+
+
   return (
-    <main className="App">
+    <main className="App" >
       { user ?
         <>
         <NavBar user={user} setUser={updateUser}/>
