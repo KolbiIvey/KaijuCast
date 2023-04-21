@@ -1,16 +1,15 @@
-# KaijuCast
-A kaiju themed weather app
+### KaijuCast 
+Your Kaiju-sized weather report, starts now.
 
 
-# Wireframe
-https://whimsical.com/Ez7W153fmEBPhFpoqAbYjv
+### Description
+A weather that every kaiju loving fan will wan to use! Ever dreamed of stopping through Tokyo whilealso getting
+the latest weather report? Me neither, but if you have this is the app for you! 
+KaijuCast was designed to bring you weather data for a plethora of different cities acroos the globe! 
+As an added bonus you'll see a five day 12 hour forcast for every city you search for, and the ability to save up to 9 different 
+locations so you can easily view eac other thier respective weather data including tempurature and weather condition.
+Each weather condition also comes with a background image of a different kaiju, just for funsies!
+Please enjoy your time viewing the weather conditions of your favorite locations and wherever you want! 
 
 
-
-# Trello Board
-https://trello.com/b/ERQ4TCec/kaijucast
-
-
-
-# ERD
-https://lucid.app/lucidspark/d2ea1fd5-bac0-4706-afd2-7b95c2badc77/edit?viewport_loc=-475%2C25%2C2786%2C1484%2C0_0&invitationId=inv_4604d662-6f75-4439-ab0d-de6858b6dd67
+###
