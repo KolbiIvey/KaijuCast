@@ -5,7 +5,7 @@ const favsCtrl = require('../../controllers/api/favorites')
 //GET api/favorites
 router.get('/', favsCtrl.locations)
 
-//POST api/favorites
+//POST api/favorites/:cityName
 router.post('/:cityName', favsCtrl.saveLocation)
 
 module.exports = router;

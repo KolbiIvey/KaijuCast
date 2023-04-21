@@ -6,7 +6,7 @@ import './NavBar.css'
 export default function NavBar({user, setUser}) {
 
     const navigate = useNavigate();
-
+    //these handle clicks navigate to the respective pathways
     function handleClick() {
       navigate('/favorites')
     }
