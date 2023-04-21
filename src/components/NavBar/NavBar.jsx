@@ -11,6 +11,10 @@ export default function NavBar({user, setUser}) {
       navigate('/favorites')
     }
 
+    function handleSecondClick() {
+      navigate('/search')
+    }
+  
 
 
   return (
@@ -19,6 +23,7 @@ export default function NavBar({user, setUser}) {
         <UserLogOut user={user} setUser={setUser} />
         <div>How are you today, {user.name}?</div>
         <div>
+            <button onClick={handleSecondClick}>Search</button>
             <button onClick={handleClick}>Fav Locations</button>
         </div>
     </div>

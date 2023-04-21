@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import * as favoritesAPI from '../../utilities/favorites-api'
+import './FavLocations.css'
+import sunnyKaiju from '../../../src/assets/clear-sky.jpeg'
+import cloudKaiju from '../../../src/assets/cloudy.jpeg'
+import snowKaiju from '../../../src/assets/snow.jpeg'
+import rainKaiju from '../../../src/assets/rain.png'
 
 export default function FavLocations() {
 
@@ -8,12 +13,24 @@ export default function FavLocations() {
  
   const apiToken = import.meta.env.VITE_API_KEY
 
-  const navigate = useNavigate();
-
-  function handleClick() {
-    navigate('/search')
+    function kaijuBackground(weatherData) {
+      const weatherIdNum = weatherData.weather[0].id;
+    if(weatherIdNum >=200 && weatherIdNum <= 531) {
+      //this is the image for rain
+      return rainKaiju;
+    } else if (weatherIdNum >= 600 && weatherIdNum <= 622) {
+      //image for snow
+      return snowKaiju;
+    } else if(weatherIdNum >= 801 && weatherIdNum <= 804) {
+      //image for clouds
+      return cloudKaiju;
+    } else {
+      //image for sunny weather
+      return sunnyKaiju
+    }
   }
 
+ 
   useEffect(function() {
     //async gunction that will grab the users favroite locations
     async function getUserLocations() {
@@ -44,15 +61,14 @@ export default function FavLocations() {
 
   return (
     <div>
-      <button onClick={handleClick}>Search</button>
       <h2>Favorite Locations</h2>
       {weather.length === 0 ? (
         <p>What did you expect something magical? Add some favorite locations.</p>
-
-      ) : (
-        <div>
+        
+        ) : (
+          <div className='fav-container'>
         {weather.map((wData, idx) => (
-          <div key={idx}>
+          <div className='fav-value' key={idx} style={{backgroundImage: `url(${kaijuBackground(wData)})`}}>
             <p>{wData.name}</p>
             <p>Temp: {Math.round((wData.main.temp - 273.15) * 9/5 + 32)}°F</p>
             <p>{wData.weather[0].description}</p>
